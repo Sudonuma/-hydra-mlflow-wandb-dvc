@@ -1,0 +1,15 @@
+artifact_uri: file:///home/hydra-mlflow-wandb-dvc/mlruns/0/82ee74af44634be09c58c287e78e3841/artifacts
+end_time: 1631311892611
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 82ee74af44634be09c58c287e78e3841
+run_uuid: 82ee74af44634be09c58c287e78e3841
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1631311882436
+status: 4
+tags: []
+user_id: root
