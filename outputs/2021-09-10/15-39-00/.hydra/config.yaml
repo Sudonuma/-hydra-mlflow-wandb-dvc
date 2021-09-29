@@ -1,7 +1,0 @@
-main:
-  project_name: sheldon
-  experiment_name: development
-  execute_steps:
-  - download
-data:
-  file_url: https://github.com/udacity/nd0821-c2-build-model-workflow-exercises/blob/master/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/genres_mod.parquet?raw=true
