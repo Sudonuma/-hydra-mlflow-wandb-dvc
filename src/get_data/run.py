@@ -17,6 +17,7 @@ def go(args):
 
     logger.info(f"Downloading {args.data_url} ...")
     logger.info("Creating run")
+    
     with wandb.init(job_type="download_data") as run:
         # Download the file streaming and write to open temp file
         file_id = args.data_url.split('/')[-2]

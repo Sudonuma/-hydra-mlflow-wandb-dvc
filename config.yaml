@@ -1,7 +1,6 @@
 main:
   project_name: sheldon
   experiment_name: development
-  execute_steps:
-    - download
+  steps: all
 data:
   data_url: "https://drive.google.com/file/d/1CSRquWi7xNYH9oSsVfZDtep2sCNauLQL/view?usp=sharing"

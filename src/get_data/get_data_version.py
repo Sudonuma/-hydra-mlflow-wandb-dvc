@@ -6,10 +6,10 @@ import wandb
 import requests
 import tempfile
 import os
-import gdown
+# import gdown
 import yaml
 
-# step should be in the prerocess data or in the check data
+# step should be in the preprocess data or in the check data
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
@@ -17,7 +17,7 @@ logger = logging.getLogger()
 
 # Get url from DVC
 import dvc.api
-
+from dvc.repo import Repo
 
 
 def go(args):
@@ -26,10 +26,14 @@ def go(args):
     logger.info("Creating run")
 
     data_url = dvc.api.get_url(
-        path=args.data_path,
+        path='/home/hydra-mlflow-wandb-dvc/src/get_data/data',
         repo=args.repo,
-        rev=args.version
+        rev='9cb5b22db42ed008416f443eb6a1dabab16d6af1'
     )
+
+    logger.info("pulling data with DVC")
+    repo = Repo(".")
+    repo.pull()
 
 
     with wandb.init(job_type="change_data_version") as run:
@@ -65,15 +69,15 @@ if __name__ == "__main__":
     )
 # check how to do it in a remote storage (without the path, with a url) (ambe you wont need it, you can download the latest version with dvc pull then download the the specific version with this script (as all git commits should be available in your local machine))
     parser.add_argument(
-        "--data_path", type=str, help="path to data to your data",  default="/home/hydra-mlflow-wandb-dvc/src/get_data/data"
+        "--data_path", type=str, help="path to data to your data",  default="/home/hydra-mlflow-wandb-dvc/src/get_data/"
     )
 
     parser.add_argument(
-        "--repo", type=str, help="Name for the artifact",  default="https://github.com/Sudonuma/hydra-mlflow-wandb-dvc.git" 
+        "--repo", type=str, help="repository",  default="https://github.com/Sudonuma/hydra-mlflow-wandb-dvc.git" 
     )
 
     parser.add_argument(
-        "--version", type=str, help="Name for the artifact",  default="v2"
+        "--version", type=str, help="version",  default="v2"
     )
 
     parser.add_argument(
