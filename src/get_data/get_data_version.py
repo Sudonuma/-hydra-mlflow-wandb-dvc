@@ -26,7 +26,7 @@ def go(args):
     logger.info("Creating run")
 
     data_url = dvc.api.get_url(
-        path='/home/hydra-mlflow-wandb-dvc/src/get_data/data',
+        path='/home/hydra-mlflow-wandb-dvc/src/get_data/',
         repo=args.repo,
         rev='9cb5b22db42ed008416f443eb6a1dabab16d6af1'
     )
