@@ -1,1 +1,6 @@
 /data
+artifacts/
+wandb/
+mlruns/
+outputs/
+multirun/
